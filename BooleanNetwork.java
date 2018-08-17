@@ -11,6 +11,14 @@ public class BooleanNetwork {
 		j_f = new int[k][n];
 	}
 	
+	public int getN() {
+		return this.n;
+	}
+	
+	public int getK() {
+		return this.k;
+	}
+	
 	public void setFunction(int i, boolean... function) {
 		i--; // i is 1 based index
 		if (function.length != x_f.length)
@@ -52,7 +60,7 @@ public class BooleanNetwork {
 		for (int i = 0; i < n; i++) {
 			int l = 0;
 			for (int j = 0; j < k; j++) {
-				l += state1.x[j_f[j][i] - 1] ? ((int) Math.pow(2, 2 - j)) : 0;
+				l += state1.x[j_f[j][i] - 1] ? ((int) Math.pow(2, k - j - 1)) : 0;
 			}
 			state2.x[i] = x_f[l][i];
 		}
