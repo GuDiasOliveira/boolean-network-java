@@ -1,3 +1,4 @@
+package com.github.gudiasoliveira;
 
 public class BooleanState {
 	public boolean[] x;
